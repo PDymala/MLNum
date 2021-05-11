@@ -35,19 +35,39 @@ public class Main {
 		CsvToArff ca4 = new CsvToArff("multrainingset");
 		
 		//train and save model
-		TrainModel tm1 = new TrainModel("addtrainingset.arff", "addtrainingset.model");
-		TrainModel tm2 = new TrainModel("subtrainingset.arff", "subtrainingset.model");
-		TrainModel tm3 = new TrainModel("divtrainingset.arff", "divtrainingset.model");
-		TrainModel tm4 = new TrainModel("multrainingset.arff", "multrainingset.model");
+		TrainModel tm1 = new TrainModel();
+//		tm1.TrainModelNN("addtrainingset.arff", "addtrainingset.model");
+		tm1.TrainModelLR("addtrainingset.arff", "addtrainingset.model");
 		
+		TrainModel tm2 = new TrainModel();
+//		tm2.TrainModelNN("subtrainingset.arff", "subtrainingset.model");
+		tm2.TrainModelLR("subtrainingset.arff", "subtrainingset.model");
+//		
+		TrainModel tm3 = new TrainModel();
+		tm3.TrainModelNN("divtrainingset.arff", "divtrainingset.model");
+////		tm3.TrainModelLR("divtrainingset.arff", "divtrainingset.model");
+//		
+		TrainModel tm4 = new TrainModel();
+		tm4.TrainModelNN("multrainingset.arff", "multrainingset.model");
+////		tm4.TrainModelLR("multrainingset.arff", "multrainingset.model");
 		
 		// yes i know, that those classes above should be organized in the same way but it was just an experiment
-// 		Above methods shows in console cross validation, 10 fold. Result is around those:
+// 		Above methods shows in console cross validation, 10 fold. Result for LR is around those:
 //			Adding = 100%;
 //			Substracting = 100%;
 //			Division = 4,99%
 //			Multiplication = 92,59%
 //		Therefore, do not use division! it needs a different model. Multiplication also but it's better.
+		
+//		Result for Neural Network
+		
+		
+		
+		
+		
+		
+		
+		
 		
 
 		// ------ USAGE -----
